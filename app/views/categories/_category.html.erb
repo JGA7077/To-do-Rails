@@ -1,6 +1,14 @@
-<div id="<%= dom_id category %>" class="w-full sm:w-auto my-5 space-y-5 text-gray-200">
+<div id="<%= dom_id category %>" class="w-full sm:w-auto my-5 space-y-5">
   <div>
     <strong class="block font-medium mb-1">Name:</strong>
     <%= category.name %>
+  </div>
+
+  <div>
+    <% category.todos.each do |todo| %>
+      <span>
+        <%= todo.title %>
+      </span>
+    <% end %>
   </div>
 </div>
