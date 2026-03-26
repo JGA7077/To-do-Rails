@@ -1,3 +1,9 @@
-<div>
-  todo
-</div>
+
+<%= link_to todo, class: "bg-neutral-primary-soft block max-w-sm p-6 mr-2 border border-default rounded-md shadow-xs transition-transform duration-300 hover:scale-105 cursor-pointer" do %>
+    <h5 class="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8">
+      <%= todo.title %>
+    </h5>
+    <p class="text-body">
+      <%= todo.description %>
+    </p>
+<% end %>

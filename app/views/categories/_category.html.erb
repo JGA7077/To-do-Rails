@@ -4,11 +4,9 @@
     <%= category.name %>
   </div>
 
-  <div>
+  <div class="flex">
     <% category.todos.each do |todo| %>
-      <span>
-        <%= todo.title %>
-      </span>
+      <%= render "todo", todo: todo  %>
     <% end %>
   </div>
 </div>

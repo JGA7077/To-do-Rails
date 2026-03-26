@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+select {
+  background-color: oklch(0.278 0.033 256.848); /* Dark background */
+  color: #fff;            /* White text */
+  border: 1px solid #555;
+  padding: 10px;
+  border-radius: .375rem;
+}
