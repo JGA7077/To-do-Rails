@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[ show edit ]
+  before_action :set_todo_infos, only: %i[ show edit update destroy ]
 
   def show
   end
@@ -19,12 +19,25 @@ class TodosController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
+  end
+
+  def update
+    if @todo.update(todo_params)
+      redirect_to @todo
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @todo.destroy
+    redirect_to categories_path
   end
 
   private
-    def set_todo
+    def set_todo_infos
       @todo = Todo.find(params.expect(:id))
+      @categories = Category.all
     end
 
     def todo_params
