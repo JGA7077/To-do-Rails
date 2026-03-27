@@ -1,1 +1,23 @@
-<h1>Todo - <%= @todo.title %></h1>
+<div class="min-w-full p-5 min-h-[50vh] max-h-screen space-y-5 border border-default rounded-md relative">
+  <%= button_to @todo,
+    method: :delete,
+    class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer flex items-center justify-center absolute top-10 right-5",
+    data: { turbo_confirm: "Are you sure?" } do %>
+    <svg xmlns="http://www.w3.org/2000/svg" 
+        class="w-5 h-5" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M6 7h12M9 7V5h6v2m-7 4v6m4-6v6m4-6v6M5 7h14l-1 12H6L5 7z"/>
+    </svg>
+
+  <% end %>
+
+  <h1 class="font-bold text-4xl">Todo: <%= @todo.title %></h1>
+  <p>
+    <%= @todo.description %>
+  </p>
+</div>
+
+<%= link_to "Back to categories", categories_path, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 text-slate-900 inline-block font-medium" %>

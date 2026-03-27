@@ -31,7 +31,7 @@ class TodosController < ApplicationController
 
   def destroy
     @todo.destroy
-    redirect_to todos_path
+    redirect_to categories_path
   end
 
   private
